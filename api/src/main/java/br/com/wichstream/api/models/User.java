@@ -18,7 +18,6 @@ import java.util.Set;
         })
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private String id;
 
@@ -51,8 +50,9 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "provider_id")
-    private Provider providerId;
+    @OneToOne
+    @JoinColumn(name = "provider_id")
+    private Provider provider;
 
     @Column(name = "dt_dtIncluded")
     private LocalDateTime dtIncluded;
@@ -66,7 +66,8 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String id, String username, String email, String password) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -102,6 +103,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
 
     public Set<Role> getRoles() {
