@@ -84,36 +84,6 @@ function DefaultNavbar({ transparent, light, action }) {
             light={light}
           />
         </SuiBox>
-        {action &&
-          (action.type === "internal" ? (
-            <SuiBox display={{ xs: "none", lg: "inline-block" }}>
-              <SuiButton
-                component={Link}
-                to={action.route}
-                variant="gradient"
-                buttonColor={action.color ? action.color : "info"}
-                size="small"
-                circular
-              >
-                {action.label}
-              </SuiButton>
-            </SuiBox>
-          ) : (
-            <SuiBox display={{ xs: "none", lg: "inline-block" }}>
-              <SuiButton
-                component="a"
-                href={action.route}
-                target="_blank"
-                rel="noreferrer"
-                variant="gradient"
-                buttonColor={action.color ? action.color : "info"}
-                size="small"
-                circular
-              >
-                {action.label}
-              </SuiButton>
-            </SuiBox>
-          ))}
         <SuiBox
           display={{ xs: "inline-block", lg: "none" }}
           lineHeight={0}
@@ -128,7 +98,6 @@ function DefaultNavbar({ transparent, light, action }) {
       </SuiBox>
       {mobileView && (
         <DefaultNavbarMobile open={mobileNavbar} close={closeMobileNavbar}>
-          Hello
         </DefaultNavbarMobile>
       )}
     </Container>
