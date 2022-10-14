@@ -24,30 +24,14 @@ function SidenavCard() {
     <Card className={classes.card}>
       <CardContent className={classes.card_content}>
         <SuiBox customClass={classes.card_iconBox}>
-          <Icon className={classes.card_icon} fontSize="default">
-            star
-          </Icon>
+
         </SuiBox>
         <SuiBox>
-          <SuiTypography variant="h6" textColor="white">
-            Need help?
-          </SuiTypography>
+
           <SuiBox mb={1.5} mt={-1}>
-            <SuiTypography variant="caption" textColor="white" fontWeight="medium">
-              Access Product Page
-            </SuiTypography>
+
           </SuiBox>
-          <SuiButton
-            component={Link}
-            href="https://appseed.us/product/node-js-react-soft-dashboard"
-            target="_blank"
-            rel="noreferrer"
-            size="small"
-            color="default"
-            fullWidth
-          >
-            React Soft Dashboard
-          </SuiButton>
+
         </SuiBox>
       </CardContent>
     </Card>

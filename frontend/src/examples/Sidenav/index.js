@@ -140,15 +140,10 @@ function Sidenav({ routes, ...rest }) {
           </SuiTypography>
         </SuiBox>
         <NavLink to="/">
-          <SuiBox
-            component="img"
-            src={SoftUILogo}
-            alt="Soft UI Logo"
-            customClass={classes.sidenav_logo}
-          />
+          
           <SuiBox customClass={classes.sidenav_logoLabel}>
             <SuiTypography component="h6" variant="button" fontWeight="medium">
-              Soft UI Dashboard
+             Wichstream
             </SuiTypography>
           </SuiBox>
         </NavLink>
@@ -167,7 +162,7 @@ function Sidenav({ routes, ...rest }) {
             buttonColor="info"
             fullWidth
           >
-            Pro Version
+
           </SuiButton>
         </SuiBox>
       </SuiBox>

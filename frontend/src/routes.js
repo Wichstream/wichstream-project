@@ -32,7 +32,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
+    name: "Streams",
     key: "tables",
     route: "/tables",
     icon: <Office size="12px" />,
@@ -42,7 +42,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Billing",
+    name: "Conteudos",
     key: "billing",
     route: "/billing",
     icon: <CreditCard size="12px" />,
@@ -52,7 +52,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Virtual Reality",
+    name: "Reviews",
     key: "virtual-reality",
     route: "/virtual-reality",
     icon: <Cube size="12px" />,
@@ -62,7 +62,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "RTL",
+    name: "Indicar",
     key: "rtl",
     route: "/rtl",
     icon: <Settings size="12px" />,
@@ -73,7 +73,7 @@ const routes = [
   { type: "title", title: "Account Pages", key: "account-pages" },
   {
     type: "collapse",
-    name: "Profile",
+    name: "Perfil",
     key: "profile",
     route: "/profile",
     icon: <CustomerSupport size="12px" />,
@@ -83,7 +83,7 @@ const routes = [
   },
   {
     type: "none",
-    name: "Sign In",
+    name: "Entrar",
     key: "sign-in",
     route: "/authentication/sign-in",
     icon: <Document size="12px" />,
@@ -92,7 +92,7 @@ const routes = [
   },
   {
     type: "none",
-    name: "Sign Up",
+    name: "Cadastro",
     key: "sign-up",
     route: "/authentication/sign-up",
     icon: <SpaceShip size="12px" />,
@@ -101,7 +101,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Logout",
+    name: "Sair",
     key: "sign-out",
     route: "/authentication/sign-out",
     icon: <SpaceShip size="12px" />,
