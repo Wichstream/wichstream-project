@@ -28,7 +28,7 @@ function SignIn() {
   const { setUser } = useAuth();
   const { user } = useAuth();
 
-  const [rememberMe, setRememberMe] = useState(true);
+  const [rememberMe, setRememberMe] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(undefined);
@@ -85,10 +85,10 @@ function SignIn() {
     >
       {user && user.token ? (
         <div>
-          <h3 style={{ textAlign: "center" }}>You are already signed in.</h3>
+          <h3 style={{ textAlign: "center" }}>Você já está logado!</h3>
           <SuiBox mt={4} mb={1}>
             <SuiButton variant="gradient" buttonColor="info" fullWidth onClick={login}>
-              {`Let's go`}
+              {`Ir`}
             </SuiButton>
           </SuiBox>
         </div>
