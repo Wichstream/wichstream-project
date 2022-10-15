@@ -64,7 +64,7 @@ function SignIn() {
       if (err.response) {
         return setError(err.response.data.msg);
       }
-      return setError("There has been an error.");
+      return setError("Não foi possível efetuar o login.");
     }
   };
 
