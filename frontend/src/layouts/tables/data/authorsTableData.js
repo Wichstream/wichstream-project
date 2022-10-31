@@ -4,11 +4,18 @@ import SuiBox from "components/SuiBox";
 import SuiTypography from "components/SuiTypography";
 import SuiAvatar from "components/SuiAvatar";
 import SuiBadge from "components/SuiBadge";
+import Icon from "@mui/material/Icon";
 
 // Images
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+import stream1 from "assets/images/streams/disneyplus.jpg";
+import stream2 from "assets/images/streams/netflix.jpg";
+import stream3 from "assets/images/streams/starplus.jpg";
+import stream4 from "assets/images/streams/telecinePlay.jpg";
+import stream5 from "assets/images/streams/amazonPrimeVideo.jpg";
+import stream6 from "assets/images/streams/appleTvPlus.jpg";
+import stream7 from "assets/images/streams/globoPlay.jpg";
+import stream8 from "assets/images/streams/hbomax.jpg";
+
 
 function Author({ image, name, email }) {
   return (
@@ -41,153 +48,132 @@ function Function({ job, org }) {
   );
 }
 
+const action = (
+  <Icon className="font-bold text-secondary cursor-pointer" fontSize="small">
+    more_vert
+  </Icon>
+);
+
 export default {
   columns: [
-    { name: "author", align: "left" },
-    { name: "function", align: "left" },
-    { name: "status", align: "center" },
-    { name: "employed", align: "center" },
-    { name: "action", align: "center" },
+    { name: "nome", align: "left" },
+    { name: "proprietario", align: "left" },
+    { name: "lançamento", align: "center" },
+    { name: "conteúdos", align: "center" },
   ],
 
   rows: [
     {
-      author: <Author image={team2} name="John Michael" email="john@wichstream.com" />,
-      function: <Function job="Manager" org="Organization" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          23/04/18
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream1} name="Disney+" email="" />,
+      proprietario: <Function job="The Walt Disney Company" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          12/11/2019
         </SuiTypography>
       ),
+      conteúdos: action,
     },
     {
-      author: <Author image={team3} name="Alexa Liras" email="alexa@wichstream.com" />,
-      function: <Function job="Programator" org="Developer" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="offline" color="secondary" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          11/01/19
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream2} name="Netflix" email="" />,
+      proprietario: <Function job="Reed Hastings" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          29/08/1997
         </SuiTypography>
       ),
+      conteúdos: action,
     },
     {
-      author: <Author image={team4} name="Laurent Perrier" email="laurent@wichstream.com" />,
-      function: <Function job="Executive" org="Projects" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          19/09/17
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream3} name="Star+" email="" />,
+      proprietario: <Function job="The Walt Disney Company" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          31/08/2021
         </SuiTypography>
       ),
+      conteúdos: action,
     },
     {
-      author: <Author image={team3} name="Michael Levi" email="michael@wichstream.com" />,
-      function: <Function job="Programator" org="Developer" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          24/12/08
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream4} name="Telecine Play" email="" />,
+      proprietario: <Function job="Joint Venture da Globo" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          11/11/1991
         </SuiTypography>
       ),
+      conteúdos: action,
     },
     {
-      author: <Author image={team2} name="Richard Gran" email="richard@wichstream.com" />,
-      function: <Function job="Manager" org="Executive" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="offline" color="secondary" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          04/10/21
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream5} name="Amazon Prime Video" email="" />,
+      proprietario: <Function job="Amazon.com" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          07/09/2006
         </SuiTypography>
       ),
+      conteúdos: action,
     },
     {
-      author: <Author image={team4} name="Miriam Eric" email="miriam@wichstream.com" />,
-      function: <Function job="Programtor" org="Developer" />,
-      status: (
-        <SuiBadge variant="gradient" badgeContent="offline" color="secondary" size="extra-small" />
-      ),
-      employed: (
-        <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
-          14/09/20
-        </SuiTypography>
-      ),
-      action: (
+      nome: <Author image={stream6} name="Apple TV Plus" email="" />,
+      proprietario: <Function job="Apple" org="" />,
+      lançamento: (
         <SuiTypography
-          component="a"
-          href="#"
           variant="caption"
           textColor="secondary"
           fontWeight="medium"
         >
-          Edit
+          01/11/2019
         </SuiTypography>
       ),
+      conteúdos: action,
+    },
+    {
+      nome: <Author image={stream7} name="Globo Play" email="" />,
+      proprietario: <Function job="Globo" org="" />,
+      lançamento: (
+        <SuiTypography
+          variant="caption"
+          textColor="secondary"
+          fontWeight="medium"
+        >
+          03/11/2015
+        </SuiTypography>
+      ),
+      conteúdos: action,
+    },
+    {
+      nome: <Author image={stream8} name="HBO Max" email="" />,
+      proprietario: <Function job="Warner Bros" org="" />,
+      lançamento: (
+        <SuiTypography
+          variant="caption"
+          textColor="secondary"
+          fontWeight="medium"
+        >
+          27/05/2020
+        </SuiTypography>
+      ),
+      conteúdos: action,
     },
   ],
 };

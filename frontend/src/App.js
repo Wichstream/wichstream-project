@@ -17,21 +17,21 @@ import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard PRO React components
+// React components
 import SuiBox from "components/SuiBox";
 
-// Soft UI Dashboard PRO React example components
+// PRO React example components
 import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
 
-// Soft UI Dashboard PRO React themes
+// PRO React themes
 import theme from "assets/theme";
 import themeRTL from "assets/theme/theme-rtl";
 
-// Soft UI Dashboard PRO React routes
+// PRO React routes
 import routes from "routes";
 
-// Soft UI Dashboard PRO React contexts
+// PRO React contexts
 import { useSoftUIController } from "context";
 
 import rtlPlugin from "stylis-plugin-rtl";
@@ -126,7 +126,6 @@ export default function App() {
             <>
               <Sidenav routes={routes} />
               <Configurator />
-              {configsButton}
             </>
           )}
           {layout === "vr" && <Configurator />}
@@ -145,7 +144,7 @@ export default function App() {
           <>
             <Sidenav routes={routes} />
             <Configurator />
-            {configsButton}
+
           </>
         )}
         {layout === "vr" && <Configurator />}

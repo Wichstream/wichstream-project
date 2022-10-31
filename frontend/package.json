@@ -1,16 +1,16 @@
 {
-    "name": "react-soft-ui-dashboard",
-    "version": "2.0.5",
-    "private": true,
-    "author": "Creative Tim & AppSeed",
-    "license": "See license in https://www.wichstream.com/license",
-    "description": "Projeto Integrador - Cursos de Analise e Desenvolvimento de Sistemas",
-    "bugs": {
-        "url": "https://github.com/app-generator/react-soft-ui-dashboard/issues"
+    "name": "frontend-application-wichstream",
+    "version": "1.1.1",
+    "engines": {
+        "node": "16.x"
     },
+    "private": true,
+    "author": "Wichstream Team",
+    "license": "See license",
+    "description": "Projeto Integrador - Cursos de Analise e Desenvolvimento de Sistemas - Grupo Wichstream",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/app-generator/react-soft-ui-dashboard.git"
+        "url": "git+https://github.com/Wichstream/wichstream-project.git"
     },
     "dependencies": {
         "@emotion/cache": "^11.4.0",

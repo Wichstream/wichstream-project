@@ -74,10 +74,7 @@ function Header() {
           <Grid item>
             <SuiBox height="100%" mt={0.5} lineHeight={1}>
               <SuiTypography variant="h5" fontWeight="medium">
-                Alex Thompson
-              </SuiTypography>
-              <SuiTypography variant="button" textColor="text" fontWeight="medium">
-                CEO / Co-Founder
+                Edson Barbosa Junior
               </SuiTypography>
             </SuiBox>
           </Grid>
@@ -89,9 +86,6 @@ function Header() {
                 onChange={handleSetTabValue}
                 className="bg-transparent"
               >
-                <Tab label="App" icon={<Cube />} />
-                <Tab label="Message" icon={<Document />} />
-                <Tab label="Settings" icon={<Settings />} />
               </Tabs>
             </AppBar>
           </Grid>

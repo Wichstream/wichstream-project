@@ -151,20 +151,6 @@ function Sidenav({ routes, ...rest }) {
       <Divider />
       <List>{renderRoutes}</List>
       <SuiBox customClass={classes.sidenav_footer}>
-        <SidenavCard />
-        <SuiBox mt={2}>
-          <SuiButton
-            component="a"
-            href="https://appseed.us/full-stack/react-soft-ui-dashboard"
-            target="_blank"
-            rel="noreferrer"
-            variant="gradient"
-            buttonColor="info"
-            fullWidth
-          >
-
-          </SuiButton>
-        </SuiBox>
       </SuiBox>
     </Drawer>
   );
