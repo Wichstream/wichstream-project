@@ -32,9 +32,9 @@ Clonar o projeto - https://github.com/Wichstream/wichstream-project.git
 
 Instalar o Git Bash (Para Windows) - 
 
-Instalar o NodeJs - 
+Instalar o NodeJs - https://nodejs.org/en/
 
-Instalar o Yarn - 
+Instalar o Yarn - https://yarnpkg.com/
 
 ```
 
