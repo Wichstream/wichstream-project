@@ -18,13 +18,13 @@ function WorkWithTheRockets() {
         <SuiBox customClass={classes.workWithTheRockets_content}>
           <SuiBox mb={3} pt={1}>
             <SuiTypography variant="h5" textColor="white" fontWeight="bold">
-              Work with the rockets
+              Interaja com outros Streamers
             </SuiTypography>
           </SuiBox>
           <SuiBox mb={2}>
             <SuiTypography variant="body2" textColor="white">
-              Wealth creation is an evolutionarily recent positive-sum game. It is all about who
-              take the opportunity first.
+              Possibilidade de interagir com outros usuários de serviços de Streamers
+              atráves de reviews, comentários, curtidas e compartilhamentos.
             </SuiTypography>
           </SuiBox>
           <SuiTypography
@@ -35,7 +35,7 @@ function WorkWithTheRockets() {
             fontWeight="medium"
             customClass={classes.workWithTheRockets_button}
           >
-            Read More
+            Mais info
             <Icon className="font-bold">arrow_forward</Icon>
           </SuiTypography>
         </SuiBox>

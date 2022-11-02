@@ -44,9 +44,8 @@ function Overview() {
           <Grid item xs={12}>
             <ProfileInfoCard
               title="meu perfil"
-              description="Hi, I’m Alec Thompson, Decisions: 
-              If you can’t decide, the answer is no. If two equally difficult paths, 
-              choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Estudande de Análise e Desenvolvimento de Sistema, pai, amante de um bom pedal. Sempre
+              em busca de aventuras e em busca de bons títulos que acrescentem algo pra vida."
               info={{
                 fullName: "Edson Barbosa Junior",
                 mobile: "(44) 99930 6523",
@@ -76,7 +75,7 @@ function Overview() {
         </Grid>
       </SuiBox>
 
-      <SuiBox mb={3}>
+      <SuiBox mb={6}>
         <Card>
           <SuiBox pt={2} px={2}>
             <SuiBox mb={0.5}>

@@ -19,7 +19,7 @@ export default makeStyles(({ palette, functions, borders, boxShadows }) => {
       backgroundSize: "cover",
       backgroundPosition: "50%",
       display: "flex",
-      alignItems: "flex-end",
+      alignItems: "center",
       position: "relative",
       overflow: "hidden",
       minHeight: pxToRem(200),

@@ -24,17 +24,20 @@ function BuildByDevelopers() {
           <Grid item xs={12} lg={6}>
             <SuiBox display="flex" flexDirection="column" height="100%">
               <SuiBox pt={1} mb={0.5}>
-                <SuiTypography variant="body2" textColor="text" fontWeight="medium">
-                  Build by developers
-                </SuiTypography>
+                <SuiTypography
+                  variant="body2"
+                  textColor="text"
+                  fontWeight="medium"
+                ></SuiTypography>
               </SuiBox>
               <SuiTypography variant="h5" fontWeight="bold" gutterBottom>
-                Soft UI Dashboard
+                Wichstream Dashboard
               </SuiTypography>
               <SuiBox mb={6}>
                 <SuiTypography variant="body2" textColor="text">
-                  From colors, cards, typography to complex elements, you will find the full
-                  documentation.
+                  Gerenciar meus streams, conteudos, ler reviews, compartilhar,
+                  curtir, comentar e interagir com outros streamers sobre
+                  diversos conteúdos existentes...
                 </SuiTypography>
               </SuiBox>
               <SuiTypography
@@ -45,7 +48,7 @@ function BuildByDevelopers() {
                 fontWeight="medium"
                 customClass={classes.buildByDevelopers_button}
               >
-                Read More
+                Mais info
                 <Icon className="font-bold">arrow_forward</Icon>
               </SuiTypography>
             </SuiBox>
@@ -70,7 +73,13 @@ function BuildByDevelopers() {
                 width="100%"
                 height="100%"
               />
-              <SuiBox component="img" src={rocketWhite} alt="rocket" width="100%" pt={3} />
+              <SuiBox
+                component="img"
+                src={rocketWhite}
+                alt="rocket"
+                width="100%"
+                pt={3}
+              />
             </SuiBox>
           </Grid>
         </Grid>

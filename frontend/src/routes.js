@@ -1,9 +1,8 @@
 // Dashboard React layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
-import Billing from "layouts/billing";
-import VirtualReality from "layouts/virtual-reality";
-import RTL from "layouts/rtl";
+import Streams from "layouts/streams";
+import Conteudos from "layouts/conteudos";
+import Reviews from "layouts/reviews";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
@@ -12,7 +11,6 @@ import SignOut from "layouts/authentication/sign-out";
 // Dashboard React icons
 import Shop from "examples/Icons/Shop";
 import Office from "examples/Icons/Office";
-import Settings from "examples/Icons/Settings";
 import Document from "examples/Icons/Document";
 import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
@@ -33,40 +31,30 @@ const routes = [
   {
     type: "collapse",
     name: "Streams",
-    key: "tables",
-    route: "/tables",
+    key: "streams",
+    route: "/streams",
     icon: <Office size="12px" />,
-    component: Tables,
+    component: Streams,
     noCollapse: true,
     protected: true,
   },
   {
     type: "collapse",
     name: "Conteudos",
-    key: "billing",
-    route: "/billing",
+    key: "conteudos",
+    route: "/conteudos",
     icon: <CreditCard size="12px" />,
-    component: Billing,
+    component: Conteudos,
     noCollapse: true,
     protected: true,
   },
   {
     type: "collapse",
     name: "Reviews",
-    key: "virtual-reality",
-    route: "/virtual-reality",
+    key: "reviews",
+    route: "/reviews",
     icon: <Cube size="12px" />,
-    component: VirtualReality,
-    noCollapse: true,
-    protected: true,
-  },
-  {
-    type: "collapse",
-    name: "Indicar",
-    key: "rtl",
-    route: "/rtl",
-    icon: <Settings size="12px" />,
-    component: RTL,
+    component: Reviews,
     noCollapse: true,
     protected: true,
   },

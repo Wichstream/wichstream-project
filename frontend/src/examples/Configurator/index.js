@@ -88,9 +88,9 @@ function Configurator() {
         px={3}
       >
         <SuiBox>
-          <SuiTypography variant="h5">Soft UI Configurator</SuiTypography>
+          <SuiTypography variant="h5">Configurar Dashboard</SuiTypography>
           <SuiTypography variant="body2" textColor="text">
-            See our dashboard options.
+            Opções para personalizar seu Dashboard.
           </SuiTypography>
         </SuiBox>
 
@@ -106,7 +106,7 @@ function Configurator() {
 
       <SuiBox pt={1.25} pb={3} px={3}>
         <SuiBox>
-          <SuiTypography variant="h6">Sidenav Colors</SuiTypography>
+          <SuiTypography variant="h6">Cores Menu Lateral</SuiTypography>
 
           <SuiBox my={0.5}>
             {sidenavColors.map((color) => (
@@ -122,9 +122,9 @@ function Configurator() {
         </SuiBox>
 
         <SuiBox mt={3}>
-          <SuiTypography variant="h6">Sidenav Type</SuiTypography>
+          <SuiTypography variant="h6">Tipo Menu Lateral</SuiTypography>
           <SuiTypography variant="button" textColor="text" fontWeight="regular">
-            Choose between 2 different sidenav types.
+            Escolha entre dois tipos de Menu Lateral
           </SuiTypography>
 
           <SuiBox customClass={classes.configurator_sidenav_types}>
@@ -135,7 +135,7 @@ function Configurator() {
               disabled={disabled}
               fullWidth
             >
-              Transparent
+              Transparente
             </SuiButton>
             <SuiButton
               buttonColor="info"
@@ -144,74 +144,15 @@ function Configurator() {
               disabled={disabled}
               fullWidth
             >
-              White
+              Branco
             </SuiButton>
           </SuiBox>
         </SuiBox>
         <SuiBox mt={3} mb={2}>
-          <SuiTypography variant="h6">Navbar Fixed</SuiTypography>
-
+          <SuiTypography variant="h6">Menu Lateral Fixo</SuiTypography>
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
         </SuiBox>
-
         <Divider />
-
-        <SuiBox mt={3} mb={2}>
-          <SuiBox mb={2}>
-            <SuiButton
-              component={Link}
-              href="/"
-              target="_blank"
-              rel="noreferrer"
-              buttonColor="dark"
-              variant="gradient"
-              fullWidth
-            >
-              oiii
-            </SuiButton>
-          </SuiBox>
-        </SuiBox>
-        <SuiBox display="flex" justifyContent="center">
-          <GitHubButton
-            href="https://github.com/app-generator/react-soft-ui-dashboard"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star Soft UI Dashboard React on GitHub"
-          >
-            Star
-          </GitHubButton>
-        </SuiBox>
-        <SuiBox mt={3} textAlign="center">
-          <SuiBox mb={0.5}>
-            <SuiTypography variant="h6">Thank you for sharing!</SuiTypography>
-          </SuiBox>
-
-          <SuiBox display="flex" justifyContent="center">
-            <SuiBox mr={1.5}>
-              <SuiButton
-                component={Link}
-                href="//twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20%20React%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&url=https%3A%2F%2Fwww.wichstream.com%2Fproduct%2Fsoft-ui-dashboard-react"
-                target="_blank"
-                rel="noreferrer"
-                buttonColor="dark"
-              >
-                <TwitterIcon />
-                &nbsp; Tweet
-              </SuiButton>
-            </SuiBox>
-            <SuiButton
-              component={Link}
-              href="https://www.facebook.com/sharer/sharer.php?u=https://appseed.us/product/node-js-react-soft-dashboard"
-              target="_blank"
-              rel="noreferrer"
-              buttonColor="dark"
-            >
-              <FacebookIcon />
-              &nbsp; Share
-            </SuiButton>
-          </SuiBox>
-        </SuiBox>
       </SuiBox>
     </Drawer>
   );
