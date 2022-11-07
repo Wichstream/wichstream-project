@@ -1,14 +1,8 @@
-/*
-
-Copyright (c) 2019 - present AppSeed.us
-
-*/
-
 import passport from 'passport';
 import { ExtractJwt, Strategy as JwtStrategy } from 'passport-jwt';
+import { getRepository } from "typeorm";
 
 import User from '../models/user';
-import { connection } from '../server/database';
 
 export default (pass: passport.PassportStatic) => {
   const opts = {
@@ -19,7 +13,7 @@ export default (pass: passport.PassportStatic) => {
   pass.use(
     new JwtStrategy(opts, async (jwtPayload, done) => {
       try {
-        const userRepository = connection?.getRepository(User);
+        const userRepository = getRepository(User);
         const user = await userRepository?.findOne(jwtPayload._doc._id);
 
         if (user) {

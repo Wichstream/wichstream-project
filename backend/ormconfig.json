@@ -1,15 +1,25 @@
 [
-    {
-      "name": "default",
-      "type": "sqlite",
-      "database": "./database.db",
-      "autoSchemaSync": true,
-      "entities": [
-        "src/models/**/*{.js,.ts}"
-      ],
-      "migrations": ["src/migrations/**/*{.js,.ts}"],
-      "cli": {
-        "migrationsDir": "src/migrations/"
-      }
+  {
+    "type": "postgres",
+    "url": "postgres://dghyljdvflhfjg:5ff1be62ab7311d38b32f065fb9e403370e596b6da9bfd07b268f333010e6ca3@ec2-3-231-82-226.compute-1.amazonaws.com:5432/d4fu5v5frplgof",
+    "synchronize": true,
+    "logging": true,
+    "ssl": {
+      "rejectUnauthorized": false
+    },
+    "entities": [
+      "src/models/**/*{.js,.ts}"
+    ],
+    "migrations": [
+      "dist/migration/**/*.js"
+    ],
+    "subscribers": [
+      "dist/subscriber/**/*.js"
+    ],
+    "cli": {
+      "entitiesDir": "src/models/**/*{.js,.ts}",
+      "migrationsDir": "src/migrations/",
+      "subscribersDir": "./src/subscriber"
     }
-  ]
+  }
+]

@@ -1,32 +1,16 @@
-import sqlite3 from 'sqlite3';
-/* eslint-disable import/no-mutable-exports */
-import { Connection, ConnectionOptions, createConnection } from 'typeorm';
+import { ConnectionOptions } from 'typeorm';
+import User from '../models/user'
+import ActiveSession from '../models/activeSession'
 
-import ActiveSession from '../models/activeSession';
-import User from '../models/user';
-
-if (!process.env.SQLITE_PATH) {
-  throw new Error('SQLITE_PATH environment variable is not set.');
-}
-
-const options: ConnectionOptions = {
-  type: 'sqlite',
-  database: process.env.SQLITE_PATH,
+const config: ConnectionOptions = {
+  type: "postgres",
+  host: process.env.POSTGRES_HOST || "localhost",
+  port: Number(process.env.POSTGRES_PORT) || 5433,
+  username: process.env.POSTGRES_USER || "wichstream",
+  password: process.env.POSTGRES_PASSWORD || "@wich2022stream!",
+  database: process.env.POSTGRES_DB || "wichstreamDB",
   entities: [User, ActiveSession],
-  logging: true,
+  synchronize: true,
 };
 
-export let connection : Connection | undefined;
-
-export const connect = async (): Promise<Connection | undefined> => {
-  try {
-    const conn = await createConnection(options);
-    connection = conn;
-    console.log(`Database connection success. Connection name: '${conn.name}' Database: '${conn.options.database}'`);
-  } catch (err) {
-    console.log(err);
-  }
-  return undefined;
-};
-
-export const PrepareDB = () => new sqlite3.Database(':memory:');
+export default config;

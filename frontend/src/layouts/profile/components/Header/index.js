@@ -20,6 +20,8 @@ import Cube from "examples/Icons/Cube";
 import Document from "examples/Icons/Document";
 import Settings from "examples/Icons/Settings";
 
+import axios from "axios";
+
 // Soft UI Dashboard PRO React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
@@ -29,32 +31,52 @@ import styles from "layouts/profile/components/Header/styles";
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
 
+const baseURL = "http://localhost:5000/api/users/user";
+
 function Header() {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
   const classes = styles();
 
+  const tokenUserSession = localStorage.getItem("user");
+  console.log(tokenUserSession);
+  const jsonTokenUserSession = JSON.parse(tokenUserSession);
+  const AuthStr = jsonTokenUserSession.token;
+
+  const [user, setUser] = useState(null);
+
+  
   useEffect(() => {
     // A function that sets the orientation state of the tabs.
     function handleTabsOrientation() {
       return window.innerWidth < breakpoints.values.sm
-        ? setTabsOrientation("vertical")
-        : setTabsOrientation("horizontal");
+      ? setTabsOrientation("vertical")
+      : setTabsOrientation("horizontal");
     }
-
+    
     /** 
      The event listener that's calling the handleTabsOrientation function when resizing the window.
-    */
+     */
     window.addEventListener("resize", handleTabsOrientation);
-
+    
     // Call the handleTabsOrientation function to set the state with the initial value.
     handleTabsOrientation();
-
+    
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleTabsOrientation);
   }, [tabsOrientation]);
 
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
+
+  useEffect(() => {
+    axios
+      .get(baseURL, { headers: { Authorization: AuthStr } })
+      .then((response) => {
+        setUser(response.data.userDto);
+      });
+  }, []);
+
+  if (!user) return null;
 
   return (
     <SuiBox position="relative">
@@ -74,7 +96,7 @@ function Header() {
           <Grid item>
             <SuiBox height="100%" mt={0.5} lineHeight={1}>
               <SuiTypography variant="h5" fontWeight="medium">
-                Edson Barbosa Junior
+                {user.username}
               </SuiTypography>
             </SuiBox>
           </Grid>
@@ -85,8 +107,7 @@ function Header() {
                 value={tabValue}
                 onChange={handleSetTabValue}
                 className="bg-transparent"
-              >
-              </Tabs>
+              ></Tabs>
             </AppBar>
           </Grid>
         </Grid>

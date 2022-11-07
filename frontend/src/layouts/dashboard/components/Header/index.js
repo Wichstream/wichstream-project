@@ -29,6 +29,10 @@ import styles from "layouts/profile/components/Header/styles";
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
 
+import axios from "axios";
+
+const baseURL = "http://localhost:5000/api/users/user";
+
 function Header() {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
@@ -56,6 +60,23 @@ function Header() {
 
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
+  const tokenUserSession = localStorage.getItem("user");
+  console.log(tokenUserSession);
+  const jsonTokenUserSession = JSON.parse(tokenUserSession);
+  const AuthStr = jsonTokenUserSession.token;
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(baseURL, { headers: { Authorization: AuthStr } })
+      .then((response) => {
+        setUser(response.data.userDto);
+      });
+  }, []);
+
+  if (!user) return null;
+
   return (
     <SuiBox position="relative">
       <DashboardNavbar absolute light />
@@ -74,7 +95,7 @@ function Header() {
           <Grid item>
             <SuiBox height="100%" mt={0.5} lineHeight={1}>
               <SuiTypography variant="h5" fontWeight="medium">
-                Edson Barbosa Junior
+                {user.username}
               </SuiTypography>
             </SuiBox>
           </Grid>
@@ -85,8 +106,7 @@ function Header() {
                 value={tabValue}
                 onChange={handleSetTabValue}
                 className="bg-transparent"
-              >
-              </Tabs>
+              ></Tabs>
             </AppBar>
           </Grid>
         </Grid>

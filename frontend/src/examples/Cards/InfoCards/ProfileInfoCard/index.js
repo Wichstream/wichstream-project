@@ -40,7 +40,7 @@ function ProfileInfoCard({ title, description, info, social, action }) {
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
-    <SuiBox key={label} display="flex" py={1} pr={2}>
+    <SuiBox key={label} display="flex" py={1} pr={2} alignItems="center">
       <SuiTypography variant="button" fontWeight="bold" textTransform="capitalize">
         {label}: &nbsp;
       </SuiTypography>

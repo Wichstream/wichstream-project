@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -34,8 +36,29 @@ import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import axios from "axios";
+
+const baseURL = "http://localhost:5000/api/users/user";
 
 function Overview() {
+
+  const tokenUserSession = localStorage.getItem("user");
+  console.log(tokenUserSession);
+  const jsonTokenUserSession = JSON.parse(tokenUserSession);
+  const AuthStr = jsonTokenUserSession.token;
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(baseURL, { headers: { Authorization: AuthStr } })
+      .then((response) => {
+        setUser(response.data.userDto);
+      });
+  }, []);
+
+  if (!user) return null;
+
   return (
     <DashboardLayout>
       <Header />
@@ -44,27 +67,26 @@ function Overview() {
           <Grid item xs={12}>
             <ProfileInfoCard
               title="meu perfil"
-              description="Estudande de Análise e Desenvolvimento de Sistema, pai, amante de um bom pedal. Sempre
-              em busca de aventuras e em busca de bons títulos que acrescentem algo pra vida."
+              description={user.description}
               info={{
-                fullName: "Edson Barbosa Junior",
-                mobile: "(44) 99930 6523",
-                email: "ebjr.tux@gmail.com",
-                location: "Brasil",
+                nome: user.username,
+                contato: user.contact,
+                email: user.email,
+                pais: user.country,
               }}
               social={[
                 {
-                  link: "/",
+                  link: "https://facebook.com/" + user.facebook,
                   icon: <FacebookIcon />,
                   color: "facebook",
                 },
                 {
-                  link: "/",
+                  link: "https://twitter.com/" + user.twitter,
                   icon: <TwitterIcon />,
                   color: "twitter",
                 },
                 {
-                  link: "/",
+                  link: "https://instagram.com/" + user.instagram,
                   icon: <InstagramIcon />,
                   color: "instagram",
                 },
@@ -157,7 +179,6 @@ function Overview() {
           </SuiBox>
         </Card>
       </SuiBox>
-
       <Footer />
     </DashboardLayout>
   );
