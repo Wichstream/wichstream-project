@@ -1,12 +1,12 @@
 {
     "name": "backend-application-wichstream",
-    "version": "1.0.0",
+    "version": "2.1.1",
     "description": "RESTful back-end for Node.js and Express.js",
     "license": "See License",
     "author": "Wichstream Team",
     "main": "src/index",
     "scripts": {
-        "start": "pm2 start production.config.json",
+        "start": "pm2-runtime start production.config.json --env production",
         "start-no-daemon": "pm2 start production.config.json --no-daemon",
         "start-node": "node build/index.js",
         "dev": "ts-node-dev src/index.ts",

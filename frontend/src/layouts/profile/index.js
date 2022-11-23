@@ -38,7 +38,7 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import axios from "axios";
 
-const baseURL = "http://localhost:5000/api/users/user";
+import { API_SERVER } from "../../config/constant"
 
 function Overview() {
 
@@ -51,7 +51,7 @@ function Overview() {
 
   useEffect(() => {
     axios
-      .get(baseURL, { headers: { Authorization: AuthStr } })
+      .get(API_SERVER + "users/user", { headers: { Authorization: AuthStr } })
       .then((response) => {
         setUser(response.data.userDto);
       });

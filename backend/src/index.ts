@@ -6,8 +6,10 @@ import server from "./server";
 
 import { createConnection } from "typeorm";
 
-http.createServer({}, server).listen(5000, '0.0.0.0', () => {
-  console.log(`Server is running...`);
+const PORT = process.env.PORT || 5000;
+
+http.createServer({}, server).listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 createConnection()

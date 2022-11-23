@@ -31,7 +31,7 @@ import burceMars from "assets/images/bruce-mars.jpg";
 
 import axios from "axios";
 
-const baseURL = "http://localhost:5000/api/users/user";
+import { API_SERVER } from "../../../../config/constant";
 
 function Header() {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
@@ -69,7 +69,7 @@ function Header() {
 
   useEffect(() => {
     axios
-      .get(baseURL, { headers: { Authorization: AuthStr } })
+      .get(API_SERVER + "users/user", { headers: { Authorization: AuthStr } })
       .then((response) => {
         setUser(response.data.userDto);
       });

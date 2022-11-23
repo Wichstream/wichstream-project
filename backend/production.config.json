@@ -1,6 +1,6 @@
 {
     "apps": [{
-        "name": "nodejs_api",
+        "name": "backend-application-wichstream",
         "script": "build/index.js",
         "instances": 1,
         "autorestart": true,
